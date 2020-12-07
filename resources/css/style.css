@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 650px;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Mulish', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+::-webkit-scrollbar-track {
+    background: repeating-linear-gradient(rgb(255, 87, 87), rgb(88, 88, 230), rgb(76, 228, 76),rgb(241, 241, 88));
+  }
+::-webkit-scrollbar-thumb {
+    background:#484849;
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb:hover {
+    background:  rgb(133, 132, 132);
+  }
+::-webkit-scrollbar-thumb:active {
+    background:  rgb(133, 132, 132);
+  }
+
+a, a:active, a:hover, a:visited {
+    text-decoration: none;
+}
+
+/*  REUSABLE COMPONENTS  */
+
+.btn {
+    --ionicon-stroke-width: 36px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    width: 34px;
+    border-radius: 17px;
+}
+
+.button {
+    color: #2196f3;
+    display: inline-block;
+    position: relative;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(118, 120, 121, 0.424);
+    vertical-align: middle;
+    
+    width: max-content;
+    transition: 0.2s;
+    overflow: hidden;
+}
+ a:hover{
+    color: #e0e6eb;
+    background:#2196f3;
+    box-shadow: 0 0 10px #2196f3 ,0 0 40px #2196f3 ,0 0 80px #2196f3 ;
+    transition-delay: 1s;
+
+}
+
+a span{
+    display: block;
+    position: absolute;
+}
+a span:nth-child(1){
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg , transparent, #2196f3);
+
+
+}
+a:hover span:nth-child(1){
+    left: 100%;
+    transition: 1s;
+}
+
+a span:nth-child(3){
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg , transparent, #2196f3);
+
+
+}
+a:hover span:nth-child(3){
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg , transparent, #2196f3);
+
+
+}
+a:hover span:nth-child(2){
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg , transparent, #2196f3);
+
+
+}
+a:hover span:nth-child(4){
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text,
+.sub-text {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    padding-bottom: 10px;
+}
+
+.sub-text {
+    font-size: 1.3rem;
+}
+
+.short-text {
+    line-height: 1.5;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.flex-2 {
+    width: 47.5%;
+    margin: 0 1%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-image {
+    width: 80%;
+    margin: auto;
+}
+
+/*  SIDE NAV  */
+
+nav {
+    height: 100%;
+    min-height: 650px;
+    width: 60px;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    -webkit-transition: width 0.5s ease;
+    transition: width 0.5s ease;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+}
+
+nav:hover {
+    width: 230px;
+}
+
+.side-nav {
+    list-style: none;
+    height: 100%;
+    width: 60px;
+    overflow: visible;
+    padding: 30px 0px;
+    display: table;
+    flex-direction: column;
+    transition: ease .5s delay-overflow;
+}
+
+.side-nav:hover {
+    transition: ease 300ms;
+}
+
+nav .buttons {
+    width: 250px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+nav .wrapper {
+    margin: 5px auto;
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+nav button {
+    width: 60px;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-text {
+    width: 140px;
+    line-height: 24px;
+    padding: 5px 0px;
+    margin-left: 8px;
+    border-radius: 3px;
+}
+
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transform: rotate(0deg);
+    transition: 400ms;
+}
+
+nav:hover .logo-img {
+    transform: rotate(-180deg);
+}
+
+.nav-start {
+    margin-top: 60px !important;
+}
+
+/*  HEADER  */
+
+header {
+    min-height: 700px;
+    background-image: url('../images/header-background.png');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-main {
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 80px;
+}
+
+.content {
+    text-align: center;
+    max-width: 1170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content h1 {
+    font-size: 46px;
+    line-height: 1.2;
+    padding: 10px 50px;
+}
+
+.content h3 {
+    line-height: 28px;
+    padding: 30px 20px 50px 20px;
+    font-size: 20px !important;
+    text-transform: none !important;
+    font-weight: normal !important;
+}
+
+.content .button {
+    margin-top: 40px;
+}
+
+/*  HOME PAGE  */
+
+#about {
+    box-shadow:0 -10px 20px 0px rgba(0, 0, 0, 0.12);
+}
+
+#about .button {
+    padding: 8px 20px;
+}
+
+#about .sub-text {
+    color: #DB4437;
+}
+
+#activities .sub-text {
+    color: #0F9D58;
+}
+
+#team .sub-text {
+    color: #f4b400;
+}
+
+#partners .sub-text {
+    color: #4285f4;
+}
+
+#partners .container{
+    flex-direction: column;
+    text-align: center;
+}
